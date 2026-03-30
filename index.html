@@ -8,48 +8,53 @@
 <style>
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
     font-family: Arial, sans-serif;
     color: white;
 }
 
-#overlay {
-    position: absolute;
+canvas {
+    position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.content {
+    max-width: 600px;
     text-align: center;
-    padding-top: 100px;
-    z-index: 10;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 50px;
 }
 
 p {
     color: #ccc;
 }
 
-button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    border: none;
-    background: #22c55e;
-    color: black;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-}
 </style>
 </head>
 
 <body>
 
-<div id="overlay">
-    <h1>Hizmet Savior</h1>
-    <p>Your roadmap to discipline, success, and financial freedom</p>
-    <button>Get Started</button>
-</div>
+<!-- Scroll Sections -->
+<div class="section"><div class="content"><h1>Hizmet Savior</h1><p>Your roadmap to discipline, success, and income</p></div></div>
+
+<div class="section"><div class="content"><h1>Discipline</h1><p>Build habits that eliminate procrastination</p></div></div>
+
+<div class="section"><div class="content"><h1>Academics</h1><p>Master focus and learning systems</p></div></div>
+
+<div class="section"><div class="content"><h1>Income</h1><p>Learn real-world money skills</p></div></div>
+
+<div class="section"><div class="content"><h1>Clarity</h1><p>No more confusion. Just execution.</p></div></div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
 
@@ -62,45 +67,60 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHei
 camera.position.z = 5;
 
 // Renderer
-const renderer = new THREE.WebGLRenderer({antialias: true});
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Geometry (particles)
-const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 1500;
+// Lights
+const light = new THREE.PointLight(0x22c55e, 2, 100);
+light.position.set(5,5,5);
+scene.add(light);
 
-const posArray = new Float32Array(particlesCount * 3);
+// Create floating objects (sections)
+const objects = [];
+const spacing = 8;
 
-for(let i = 0; i < particlesCount * 3; i++) {
-    posArray[i] = (Math.random() - 0.5) * 10;
+function createBox(y, color) {
+    const geometry = new THREE.BoxGeometry(2,2,2);
+    const material = new THREE.MeshStandardMaterial({color: color});
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.y = -y * spacing;
+    scene.add(mesh);
+    objects.push(mesh);
 }
 
-particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+createBox(0, 0x22c55e);
+createBox(1, 0x3b82f6);
+createBox(2, 0xf59e0b);
+createBox(3, 0xef4444);
+createBox(4, 0x8b5cf6);
 
-// Material
-const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.02,
-    color: 0x22c55e
+// Scroll tracking
+let scrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    scrollY = window.scrollY;
 });
 
-// Mesh
-const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-scene.add(particlesMesh);
-
-// Animation
+// Animation loop
 function animate() {
     requestAnimationFrame(animate);
 
-    particlesMesh.rotation.y += 0.001;
-    particlesMesh.rotation.x += 0.0005;
+    // Move camera based on scroll
+    camera.position.y = -scrollY * 0.01;
+
+    // Rotate objects
+    objects.forEach(obj => {
+        obj.rotation.x += 0.01;
+        obj.rotation.y += 0.01;
+    });
 
     renderer.render(scene, camera);
 }
 
 animate();
 
-// Resize Fix
+// Resize fix
 window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
