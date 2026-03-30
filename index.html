@@ -4,30 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hizmet Savior</title>
-  <meta name="description" content="A structured program for discipline, academics, entrepreneurship, and deep Islamic knowledge." />
+  <meta name="description" content="Professional programs for entrepreneurship, academics, and deep Islamic knowledge." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#07111f;
-      --bg-2:#0b1830;
-      --bg-3:#0d1f3f;
-      --panel:rgba(13, 24, 46, 0.74);
-      --panel-2:rgba(11, 20, 39, 0.92);
-      --panel-solid:#0d1a31;
-      --text:#edf4ff;
-      --muted:#9cb0cf;
-      --line:rgba(180, 205, 255, 0.14);
-      --line-strong:rgba(180, 205, 255, 0.22);
-      --accent:#7cc4ff;
-      --accent-2:#7ef0cf;
-      --accent-3:#8b7cff;
-      --gold:#ffd36a;
-      --shadow:0 22px 70px rgba(0,0,0,0.32);
-      --radius:26px;
-      --max:1240px;
+      --bg:#f6fbf4;
+      --bg-2:#edf7ea;
+      --bg-3:#e4f1df;
+      --panel:rgba(255,255,255,0.78);
+      --panel-strong:#ffffff;
+      --text:#183022;
+      --muted:#5f7466;
+      --line:rgba(24, 48, 34, 0.10);
+      --line-strong:rgba(24, 48, 34, 0.16);
+      --accent:#b5e0ad;
+      --accent-2:#d8efcf;
+      --accent-3:#9ccc95;
+      --button:#20452d;
+      --button-text:#ffffff;
+      --shadow:0 18px 50px rgba(33, 59, 41, 0.09);
+      --radius:24px;
+      --max:1200px;
     }
 
     *{box-sizing:border-box}
@@ -37,22 +37,22 @@
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(126,240,207,0.08), transparent 24%),
-        radial-gradient(circle at top right, rgba(124,196,255,0.12), transparent 28%),
-        linear-gradient(180deg, #07111f 0%, #091427 35%, #08111f 100%);
+        radial-gradient(circle at top left, rgba(181,224,173,0.35), transparent 28%),
+        radial-gradient(circle at top right, rgba(216,239,207,0.55), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
       overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
-    button{font:inherit}
     img{display:block;max-width:100%}
+    button{font:inherit}
 
     #bg3d{
       position:fixed;
       inset:0;
       z-index:0;
       pointer-events:none;
-      opacity:.96;
+      opacity:.55;
     }
 
     .page{
@@ -69,8 +69,8 @@
       position:sticky;
       top:0;
       z-index:1000;
-      backdrop-filter:blur(18px);
-      background:rgba(6, 13, 25, 0.62);
+      backdrop-filter:blur(16px);
+      background:rgba(246, 251, 244, 0.72);
       border-bottom:1px solid var(--line);
     }
 
@@ -95,12 +95,9 @@
       width:42px;
       height:42px;
       border-radius:14px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 38%),
-        linear-gradient(135deg, rgba(124,196,255,1), rgba(139,124,255,1));
-      box-shadow:0 10px 30px rgba(124,196,255,0.22);
+      background:linear-gradient(135deg, #b5e0ad, #d8efcf);
+      box-shadow:0 10px 24px rgba(76, 120, 78, 0.12);
       position:relative;
-      overflow:hidden;
     }
 
     .brand-mark::after{
@@ -108,7 +105,7 @@
       position:absolute;
       inset:9px;
       border-radius:10px;
-      border:1px solid rgba(255,255,255,0.32);
+      border:1px solid rgba(24,48,34,0.15);
     }
 
     .nav-links{
@@ -116,7 +113,7 @@
       gap:22px;
       align-items:center;
       color:var(--muted);
-      font-size:.96rem;
+      font-size:.95rem;
     }
 
     .nav-links a{
@@ -139,7 +136,7 @@
       padding:13px 20px;
       font-weight:700;
       cursor:pointer;
-      transition:.25s ease;
+      transition:.22s ease;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -147,36 +144,34 @@
     }
 
     .btn-primary{
-      color:#09101d;
-      background:linear-gradient(135deg, var(--accent-2), var(--accent));
-      box-shadow:0 14px 28px rgba(126,240,207,0.16);
+      background:var(--button);
+      color:var(--button-text);
+      box-shadow:0 12px 24px rgba(32,69,45,0.16);
     }
 
     .btn-primary:hover{
       transform:translateY(-2px);
-      box-shadow:0 18px 34px rgba(126,240,207,0.22);
     }
 
     .btn-secondary{
+      background:rgba(255,255,255,0.6);
       color:var(--text);
-      background:rgba(255,255,255,0.04);
       border:1px solid var(--line);
     }
 
     .btn-secondary:hover{
       transform:translateY(-2px);
-      border-color:var(--line-strong);
-      background:rgba(255,255,255,0.07);
+      background:#fff;
     }
 
     .hero{
-      padding:72px 0 38px;
+      padding:72px 0 44px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:34px;
+      grid-template-columns:1.05fr .95fr;
+      gap:32px;
       align-items:center;
     }
 
@@ -187,27 +182,27 @@
       padding:10px 14px;
       border-radius:999px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.58);
       color:var(--muted);
       margin-bottom:18px;
-      font-size:.92rem;
+      font-size:.9rem;
       backdrop-filter:blur(8px);
     }
 
     h1{
-      margin:0 0 18px;
-      font-size:clamp(2.6rem, 5vw, 5rem);
-      line-height:.98;
-      letter-spacing:-.06em;
-      max-width:760px;
+      margin:0 0 16px;
+      font-size:clamp(2.5rem, 5vw, 4.8rem);
+      line-height:.97;
+      letter-spacing:-.055em;
+      max-width:720px;
     }
 
     .hero p{
       margin:0;
       color:var(--muted);
-      line-height:1.8;
-      font-size:1.06rem;
-      max-width:700px;
+      line-height:1.75;
+      font-size:1.02rem;
+      max-width:640px;
     }
 
     .hero-actions{
@@ -227,28 +222,27 @@
     .highlight{
       background:var(--panel);
       border:1px solid var(--line);
-      border-radius:22px;
+      border-radius:20px;
       padding:18px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(12px);
     }
 
     .highlight strong{
       display:block;
       margin-bottom:6px;
-      font-size:1.04rem;
-      color:var(--text);
+      font-size:1rem;
     }
 
     .highlight span{
       color:var(--muted);
-      line-height:1.65;
-      font-size:.95rem;
+      line-height:1.6;
+      font-size:.93rem;
     }
 
     .hero-visual{
       position:relative;
-      min-height:560px;
+      min-height:520px;
     }
 
     .hero-card{
@@ -257,34 +251,11 @@
       border-radius:30px;
       border:1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(10,20,40,0.82), rgba(8,17,31,0.9)),
-        radial-gradient(circle at top right, rgba(124,196,255,0.22), transparent 26%);
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62)),
+        radial-gradient(circle at top right, rgba(181,224,173,0.28), transparent 26%);
       box-shadow:var(--shadow);
       overflow:hidden;
-      backdrop-filter:blur(10px);
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:-20% auto auto -10%;
-      width:70%;
-      height:70%;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(126,240,207,0.16), transparent 64%);
-      filter:blur(20px);
-    }
-
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      right:-12%;
-      top:-8%;
-      width:62%;
-      height:62%;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(139,124,255,0.18), transparent 66%);
-      filter:blur(20px);
+      backdrop-filter:blur(14px);
     }
 
     .hero-ui{
@@ -299,13 +270,13 @@
 
     .ui-top{
       display:grid;
-      grid-template-columns:1.25fr .75fr;
+      grid-template-columns:1.2fr .8fr;
       gap:16px;
       align-items:start;
     }
 
     .mini-panel{
-      background:rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.62);
       border:1px solid var(--line);
       border-radius:22px;
       padding:18px;
@@ -320,8 +291,8 @@
 
     .mini-panel p{
       margin:0;
-      font-size:.95rem;
-      line-height:1.7;
+      font-size:.94rem;
+      line-height:1.65;
       color:var(--muted);
     }
 
@@ -331,7 +302,7 @@
     }
 
     .progress-item{
-      background:rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.58);
       border:1px solid var(--line);
       border-radius:18px;
       padding:14px;
@@ -346,7 +317,7 @@
     .progress-bar{
       height:10px;
       border-radius:999px;
-      background:rgba(255,255,255,0.08);
+      background:rgba(24,48,34,0.08);
       overflow:hidden;
       margin-top:10px;
     }
@@ -355,35 +326,15 @@
       display:block;
       height:100%;
       border-radius:999px;
-      background:linear-gradient(90deg, var(--accent-2), var(--accent));
+      background:linear-gradient(90deg, #b5e0ad, #9ccc95);
     }
-
-    .orb-note{
-      position:absolute;
-      padding:14px 16px;
-      border-radius:18px;
-      background:rgba(8,18,34,0.72);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-      z-index:3;
-    }
-
-    .orb-note small{
-      display:block;
-      color:var(--muted);
-      margin-bottom:4px;
-    }
-
-    .n1{ top:18px; right:-14px; }
-    .n2{ left:-14px; bottom:56px; }
 
     .section{
-      padding:34px 0 82px;
+      padding:28px 0 78px;
     }
 
     .section-header{
-      margin-bottom:24px;
+      margin-bottom:22px;
       display:flex;
       justify-content:space-between;
       gap:20px;
@@ -392,15 +343,15 @@
 
     .section-header h2{
       margin:0;
-      font-size:clamp(1.9rem, 3.8vw, 3rem);
-      letter-spacing:-.045em;
+      font-size:clamp(1.8rem, 3.6vw, 2.8rem);
+      letter-spacing:-.04em;
     }
 
     .section-header p{
-      margin:10px 0 0;
-      max-width:820px;
+      margin:8px 0 0;
+      max-width:720px;
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.7;
     }
 
     .feature-grid{
@@ -412,31 +363,31 @@
     .feature-card{
       background:var(--panel);
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:22px;
       padding:22px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
+      backdrop-filter:blur(10px);
     }
 
     .feature-card h3{
-      margin:0 0 10px;
-      font-size:1.05rem;
-      letter-spacing:-.02em;
+      margin:0 0 8px;
+      font-size:1rem;
     }
 
     .feature-card p{
       margin:0;
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.65;
+      font-size:.94rem;
     }
 
     .store-shell{
-      background:rgba(11, 22, 41, 0.7);
+      background:rgba(255,255,255,0.46);
       border:1px solid var(--line);
       border-radius:28px;
       padding:18px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(12px);
     }
 
     .store-header{
@@ -452,11 +403,11 @@
 
     .search{
       flex:1;
-      max-width:420px;
+      max-width:380px;
       display:flex;
       align-items:center;
       gap:10px;
-      background:rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.62);
       border:1px solid var(--line);
       border-radius:999px;
       padding:11px 16px;
@@ -479,7 +430,7 @@
     .results{
       border-radius:24px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
+      background:rgba(255,255,255,0.42);
       padding:18px;
     }
 
@@ -495,38 +446,20 @@
     }
 
     .card{
-      background:rgba(9,18,35,0.94);
+      background:var(--panel-strong);
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:22px;
       overflow:hidden;
-      transition:.25s ease;
+      transition:.22s ease;
       cursor:pointer;
       display:flex;
       flex-direction:column;
       box-shadow:var(--shadow);
-      position:relative;
-      isolation:isolate;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      background:linear-gradient(135deg, rgba(124,196,255,0.22), transparent 26%, transparent 70%, rgba(126,240,207,0.1));
-      opacity:.75;
-      z-index:0;
-      pointer-events:none;
-    }
-
-    .card > *{
-      position:relative;
-      z-index:1;
     }
 
     .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(124,196,255,0.34);
-      box-shadow:0 26px 60px rgba(0,0,0,0.34);
+      transform:translateY(-5px);
+      border-color:var(--line-strong);
     }
 
     .card-media{
@@ -535,29 +468,29 @@
       display:grid;
       place-items:center;
       background:
-        radial-gradient(circle at 30% 20%, rgba(124,196,255,0.24), transparent 25%),
-        radial-gradient(circle at 70% 80%, rgba(126,240,207,0.16), transparent 22%),
-        linear-gradient(180deg, #11213f, #0c1830);
+        radial-gradient(circle at 30% 20%, rgba(181,224,173,0.45), transparent 24%),
+        radial-gradient(circle at 70% 80%, rgba(216,239,207,0.65), transparent 26%),
+        linear-gradient(180deg, #f8fcf6, #edf7ea);
     }
 
     .course-visual{
       width:100%;
       height:100%;
       border-radius:18px;
-      border:1px solid rgba(255,255,255,0.08);
+      border:1px solid rgba(24,48,34,0.08);
       position:relative;
       overflow:hidden;
       background:
-        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
-        radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 26%);
+        linear-gradient(145deg, rgba(255,255,255,0.7), rgba(255,255,255,0.35)),
+        radial-gradient(circle at top right, rgba(181,224,173,0.25), transparent 26%);
     }
 
     .course-visual .shape{
       position:absolute;
       border-radius:22px;
-      backdrop-filter:blur(6px);
-      border:1px solid rgba(255,255,255,0.12);
-      box-shadow:0 12px 30px rgba(0,0,0,0.18);
+      border:1px solid rgba(24,48,34,0.08);
+      box-shadow:0 10px 24px rgba(33,59,41,0.08);
+      background:rgba(255,255,255,0.7);
     }
 
     .course-visual.entrepreneur .shape.a{
@@ -565,7 +498,7 @@
       height:34%;
       left:10%;
       top:14%;
-      background:linear-gradient(135deg, rgba(124,196,255,0.55), rgba(139,124,255,0.35));
+      background:linear-gradient(135deg, rgba(181,224,173,0.95), rgba(216,239,207,0.88));
       transform:rotate(-8deg);
     }
     .course-visual.entrepreneur .shape.b{
@@ -573,7 +506,7 @@
       height:28%;
       right:12%;
       bottom:14%;
-      background:linear-gradient(135deg, rgba(126,240,207,0.55), rgba(124,196,255,0.28));
+      background:rgba(255,255,255,0.9);
       transform:rotate(10deg);
     }
     .course-visual.entrepreneur .shape.c{
@@ -581,7 +514,7 @@
       height:18%;
       left:28%;
       bottom:20%;
-      background:rgba(255,255,255,0.08);
+      background:rgba(156,204,149,0.45);
       transform:rotate(8deg);
     }
 
@@ -590,21 +523,21 @@
       height:26%;
       left:10%;
       top:16%;
-      background:linear-gradient(135deg, rgba(124,196,255,0.5), rgba(126,240,207,0.25));
+      background:linear-gradient(135deg, rgba(216,239,207,0.95), rgba(181,224,173,0.8));
     }
     .course-visual.academic .shape.b{
       width:52%;
       height:18%;
       left:20%;
       top:48%;
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.88);
     }
     .course-visual.academic .shape.c{
       width:28%;
       height:22%;
       right:10%;
       bottom:14%;
-      background:linear-gradient(135deg, rgba(139,124,255,0.42), rgba(124,196,255,0.22));
+      background:rgba(181,224,173,0.56);
     }
 
     .course-visual.islamic .shape.a{
@@ -612,7 +545,7 @@
       height:34%;
       left:12%;
       top:18%;
-      background:linear-gradient(135deg, rgba(255,211,106,0.58), rgba(126,240,207,0.24));
+      background:linear-gradient(135deg, rgba(181,224,173,0.95), rgba(255,255,255,0.92));
       border-radius:50%;
     }
     .course-visual.islamic .shape.b{
@@ -620,15 +553,16 @@
       height:28%;
       right:12%;
       top:16%;
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.92);
       clip-path:polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 69%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      border-radius:0;
     }
     .course-visual.islamic .shape.c{
       width:56%;
       height:18%;
       left:22%;
       bottom:16%;
-      background:linear-gradient(135deg, rgba(126,240,207,0.38), rgba(124,196,255,0.24));
+      background:rgba(181,224,173,0.52);
       border-radius:16px;
     }
 
@@ -645,16 +579,16 @@
       align-self:flex-start;
       padding:7px 12px;
       border-radius:999px;
-      background:rgba(126,240,207,0.12);
-      border:1px solid rgba(126,240,207,0.24);
-      color:#9ef3de;
-      font-size:.82rem;
+      background:rgba(181,224,173,0.4);
+      border:1px solid rgba(24,48,34,0.07);
+      color:#23452d;
+      font-size:.8rem;
       font-weight:700;
     }
 
     .card-title{
       font-weight:800;
-      font-size:1.1rem;
+      font-size:1.05rem;
       letter-spacing:-.02em;
     }
 
@@ -663,7 +597,7 @@
     }
 
     .price{
-      font-size:1.3rem;
+      font-size:1.16rem;
       font-weight:800;
       letter-spacing:-.03em;
     }
@@ -677,15 +611,14 @@
     .compare-card{
       background:var(--panel);
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:22px;
       padding:22px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
     }
 
     .compare-card h3{
       margin:0 0 12px;
-      font-size:1.08rem;
+      font-size:1rem;
     }
 
     .compare-list{
@@ -695,9 +628,10 @@
 
     .compare-list div{
       color:var(--muted);
-      line-height:1.65;
+      line-height:1.62;
       padding-bottom:10px;
-      border-bottom:1px solid rgba(255,255,255,0.06);
+      border-bottom:1px solid rgba(24,48,34,0.06);
+      font-size:.94rem;
     }
 
     .contact-shell{
@@ -733,7 +667,7 @@
 
     .field label{
       font-weight:700;
-      font-size:.95rem;
+      font-size:.94rem;
     }
 
     .field input,
@@ -744,7 +678,7 @@
       padding:14px 16px;
       font:inherit;
       color:var(--text);
-      background:rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.72);
       outline:none;
     }
 
@@ -755,7 +689,7 @@
 
     .contact-inline-note{
       color:var(--muted);
-      font-size:.92rem;
+      font-size:.9rem;
       margin-top:6px;
     }
 
@@ -773,8 +707,8 @@
       align-items:center;
       justify-content:center;
       padding:18px;
-      background:rgba(4, 10, 20, 0.58);
-      backdrop-filter:blur(14px);
+      background:rgba(76, 96, 76, 0.22);
+      backdrop-filter:blur(12px);
     }
 
     .modal.active{
@@ -782,13 +716,13 @@
     }
 
     .panel{
-      width:min(1180px, 100%);
+      width:min(1140px, 100%);
       max-height:calc(100vh - 36px);
       overflow:auto;
-      background:#091427;
+      background:#fdfefd;
       border:1px solid var(--line);
-      border-radius:30px;
-      box-shadow:0 34px 80px rgba(0,0,0,0.44);
+      border-radius:28px;
+      box-shadow:0 30px 80px rgba(33,59,41,0.16);
       position:relative;
     }
 
@@ -801,12 +735,11 @@
       height:46px;
       border-radius:50%;
       border:1px solid var(--line);
-      background:rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.92);
       color:var(--text);
       cursor:pointer;
       z-index:2;
       display:block;
-      backdrop-filter:blur(10px);
     }
 
     .product-page{
@@ -816,40 +749,35 @@
       padding:0 24px 24px;
     }
 
-    .gallery, .details, .buybox{
-      min-width:0;
-    }
-
     .gallery-main{
-      min-height:470px;
+      min-height:440px;
       border-radius:24px;
       border:1px solid var(--line);
       background:
-        radial-gradient(circle at top right, rgba(124,196,255,0.22), transparent 25%),
-        radial-gradient(circle at bottom left, rgba(126,240,207,0.16), transparent 22%),
-        linear-gradient(180deg, #10203f, #0b1730);
+        radial-gradient(circle at top right, rgba(181,224,173,0.32), transparent 25%),
+        linear-gradient(180deg, #f9fcf7, #edf7ea);
       padding:22px;
       display:grid;
       place-items:center;
       overflow:hidden;
-      position:relative;
     }
 
     .modal-visual{
       width:100%;
-      height:420px;
+      height:390px;
       border-radius:22px;
-      border:1px solid rgba(255,255,255,0.08);
+      border:1px solid rgba(24,48,34,0.08);
       position:relative;
       overflow:hidden;
-      background:linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      background:linear-gradient(145deg, rgba(255,255,255,0.8), rgba(255,255,255,0.46));
     }
 
     .modal-visual .shape{
       position:absolute;
       border-radius:22px;
-      border:1px solid rgba(255,255,255,0.12);
-      box-shadow:0 14px 36px rgba(0,0,0,0.2);
+      border:1px solid rgba(24,48,34,0.08);
+      box-shadow:0 12px 30px rgba(33,59,41,0.08);
+      background:rgba(255,255,255,0.8);
     }
 
     .modal-visual.entrepreneur .shape.a{
@@ -857,7 +785,7 @@
       height:32%;
       left:10%;
       top:14%;
-      background:linear-gradient(135deg, rgba(124,196,255,0.6), rgba(139,124,255,0.36));
+      background:linear-gradient(135deg, rgba(181,224,173,0.98), rgba(216,239,207,0.9));
       transform:rotate(-8deg);
     }
     .modal-visual.entrepreneur .shape.b{
@@ -865,7 +793,7 @@
       height:28%;
       right:12%;
       top:18%;
-      background:rgba(255,255,255,0.09);
+      background:rgba(255,255,255,0.92);
       transform:rotate(8deg);
     }
     .modal-visual.entrepreneur .shape.c{
@@ -873,7 +801,7 @@
       height:22%;
       left:28%;
       bottom:14%;
-      background:linear-gradient(135deg, rgba(126,240,207,0.55), rgba(124,196,255,0.22));
+      background:rgba(156,204,149,0.45);
       transform:rotate(6deg);
     }
 
@@ -882,21 +810,21 @@
       height:24%;
       left:10%;
       top:16%;
-      background:linear-gradient(135deg, rgba(124,196,255,0.58), rgba(126,240,207,0.22));
+      background:linear-gradient(135deg, rgba(216,239,207,0.96), rgba(181,224,173,0.82));
     }
     .modal-visual.academic .shape.b{
       width:54%;
       height:16%;
       left:18%;
       top:48%;
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.92);
     }
     .modal-visual.academic .shape.c{
       width:26%;
       height:22%;
       right:12%;
       bottom:16%;
-      background:linear-gradient(135deg, rgba(139,124,255,0.45), rgba(124,196,255,0.22));
+      background:rgba(181,224,173,0.56);
     }
 
     .modal-visual.islamic .shape.a{
@@ -905,14 +833,14 @@
       left:14%;
       top:18%;
       border-radius:50%;
-      background:linear-gradient(135deg, rgba(255,211,106,0.65), rgba(126,240,207,0.22));
+      background:linear-gradient(135deg, rgba(181,224,173,0.96), rgba(255,255,255,0.92));
     }
     .modal-visual.islamic .shape.b{
       width:44%;
       height:26%;
       right:12%;
       top:16%;
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.94);
       clip-path:polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 69%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
       border-radius:0;
     }
@@ -921,13 +849,13 @@
       height:18%;
       left:20%;
       bottom:16%;
-      background:linear-gradient(135deg, rgba(126,240,207,0.42), rgba(124,196,255,0.2));
+      background:rgba(181,224,173,0.5);
       border-radius:16px;
     }
 
     .thumbs{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:12px;
       margin-top:12px;
     }
@@ -935,7 +863,7 @@
     .thumb{
       border:1px solid var(--line);
       border-radius:16px;
-      background:rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.72);
       min-height:110px;
       padding:10px;
       display:grid;
@@ -946,13 +874,13 @@
 
     .thumb:hover,
     .thumb.active{
-      border-color:rgba(124,196,255,0.45);
-      box-shadow:0 0 0 2px rgba(124,196,255,0.12) inset;
+      border-color:var(--line-strong);
+      background:#fff;
     }
 
     .thumb-label{
       text-align:center;
-      font-size:.92rem;
+      font-size:.9rem;
       color:var(--muted);
       line-height:1.5;
       font-weight:600;
@@ -960,12 +888,12 @@
 
     .details h2{
       margin:0 0 10px;
-      font-size:2rem;
+      font-size:1.9rem;
       letter-spacing:-.04em;
     }
 
     .rating{
-      color:var(--gold);
+      color:#628760;
       font-size:.96rem;
       margin-bottom:14px;
     }
@@ -973,7 +901,7 @@
     .details p,
     .details li{
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.72;
     }
 
     .details ul{
@@ -999,22 +927,21 @@
     .chip{
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid var(--line);
+      background:rgba(216,239,207,0.52);
+      border:1px solid rgba(24,48,34,0.08);
       color:var(--text);
-      font-size:.92rem;
+      font-size:.9rem;
     }
 
     .buybox{
       align-self:start;
       border:1px solid var(--line);
       border-radius:24px;
-      background:rgba(255,255,255,0.04);
+      background:rgba(248,252,246,0.92);
       padding:18px;
       box-shadow:var(--shadow);
       position:sticky;
       top:20px;
-      backdrop-filter:blur(10px);
     }
 
     .buybox .price{
@@ -1023,7 +950,7 @@
 
     .buybox p{
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.68;
     }
 
     .buybox .stack{
@@ -1033,17 +960,17 @@
     }
 
     .btn-buy{
-      background:linear-gradient(135deg, #ffd86a, #ffb347);
-      color:#15120c;
+      background:var(--button);
+      color:#fff;
       font-weight:800;
-      border:1px solid rgba(0,0,0,0.08);
+      border:1px solid rgba(0,0,0,0.04);
       border-radius:999px;
       padding:14px 18px;
       text-align:center;
     }
 
     .btn-info{
-      background:rgba(255,255,255,0.04);
+      background:#fff;
       color:var(--text);
       border:1px solid var(--line);
       border-radius:999px;
@@ -1055,15 +982,15 @@
     .buybox-note{
       margin-top:16px;
       padding:12px 14px;
-      background:rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.72);
       border:1px solid var(--line);
       border-radius:16px;
       color:var(--muted);
-      line-height:1.7;
-      font-size:.93rem;
+      line-height:1.66;
+      font-size:.92rem;
     }
 
-    @media (max-width: 1150px){
+    @media (max-width:1150px){
       .hero-grid,
       .product-page{
         grid-template-columns:1fr;
@@ -1077,13 +1004,7 @@
       }
 
       .hero-visual{
-        min-height:480px;
-      }
-
-      .n1,
-      .n2{
-        position:static;
-        margin-top:12px;
+        min-height:460px;
       }
 
       .buybox{
@@ -1091,9 +1012,8 @@
       }
     }
 
-    @media (max-width: 780px){
-      .nav-links,
-      .search.nav-search{
+    @media (max-width:780px){
+      .nav-links{
         display:none;
       }
 
@@ -1107,7 +1027,7 @@
       }
 
       .hero{
-        padding-top:44px;
+        padding-top:42px;
       }
 
       h1{
@@ -1127,19 +1047,15 @@
       }
 
       .modal-visual{
-        height:280px;
+        height:260px;
       }
 
       .hero-visual{
-        min-height:420px;
+        min-height:400px;
       }
 
       .ui-top{
         grid-template-columns:1fr;
-      }
-
-      .nav-inner{
-        gap:12px;
       }
 
       .nav-actions .btn{
@@ -1162,13 +1078,13 @@
         <nav class="nav-links">
           <a href="#about">About</a>
           <a href="#courses">Courses</a>
-          <a href="#path">Path</a>
+          <a href="#path">Tracks</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div class="nav-actions">
           <a class="btn btn-secondary" href="https://youtube.com" target="_blank" rel="noopener noreferrer">Student Portal</a>
-          <a class="btn btn-primary" href="#courses">Browse Courses</a>
+          <a class="btn btn-primary" href="#courses">View Courses</a>
         </div>
       </div>
     </header>
@@ -1177,29 +1093,29 @@
       <section class="hero container">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow">Structured transformation • discipline, academics, business, and deen</div>
-            <h1>Build a stronger life with a program that gives you direction.</h1>
+            <div class="eyebrow">Structured growth across business, academics, and deen</div>
+            <h1>Professional programs for real personal development.</h1>
             <p>
-              Hizmet Savior is built for people who want more than motivation. It gives structure, clarity, and a real roadmap across three major areas: entrepreneurial growth, academic excellence, and deep Islamic knowledge. The site experience is immersive, but the content always comes first.
+              Hizmet Savior brings together high-level learning, structure, and direction through three focused tracks.
             </p>
 
             <div class="hero-actions">
-              <a href="#courses" class="btn btn-primary">Explore Programs</a>
-              <a href="#about" class="btn btn-secondary">Learn More</a>
+              <a href="#courses" class="btn btn-primary">Explore Courses</a>
+              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
 
             <div class="hero-highlights">
               <div class="highlight">
-                <strong>Step-by-step guidance</strong>
-                <span>Clear direction instead of random advice, so users know what to work on next.</span>
+                <strong>Entrepreneurial</strong>
+                <span>Business thinking, systems, and execution.</span>
               </div>
               <div class="highlight">
-                <strong>Three focused tracks</strong>
-                <span>Business, academics, and Islamic knowledge designed as real pathways, not scattered lessons.</span>
+                <strong>Academic</strong>
+                <span>Focus, study structure, and performance.</span>
               </div>
               <div class="highlight">
-                <strong>Built for transformation</strong>
-                <span>Habits, discipline, knowledge, and execution tied together into one system.</span>
+                <strong>Islamic Knowledge</strong>
+                <span>Depth, grounding, and serious learning.</span>
               </div>
             </div>
           </div>
@@ -1209,48 +1125,38 @@
               <div class="hero-ui">
                 <div class="ui-top">
                   <div class="mini-panel">
-                    <h3>Hizmet Dashboard Vision</h3>
+                    <h3>Premium learning environment</h3>
                     <p>
-                      A premium learning space where students move through real programs, track progress, and build structure in life with content that feels intentional and serious.
+                      Clean presentation, strong positioning, and a more serious educational feel.
                     </p>
                   </div>
 
                   <div class="progress-stack">
                     <div class="progress-item">
-                      <small>Entrepreneurial Track</small>
-                      <strong>Business systems & execution</strong>
-                      <div class="progress-bar"><span style="width:78%"></span></div>
+                      <small>Entrepreneurial</small>
+                      <strong>Business & execution</strong>
+                      <div class="progress-bar"><span style="width:76%"></span></div>
                     </div>
                     <div class="progress-item">
-                      <small>Academic Track</small>
-                      <strong>Focus, study, and mastery</strong>
+                      <small>Academic</small>
+                      <strong>Focus & mastery</strong>
                       <div class="progress-bar"><span style="width:72%"></span></div>
                     </div>
                     <div class="progress-item">
-                      <small>Islamic Track</small>
-                      <strong>Depth, clarity, and grounding</strong>
-                      <div class="progress-bar"><span style="width:84%"></span></div>
+                      <small>Islamic</small>
+                      <strong>Depth & grounding</strong>
+                      <div class="progress-bar"><span style="width:83%"></span></div>
                     </div>
                   </div>
                 </div>
 
                 <div class="mini-panel">
-                  <h3>Why this site feels better</h3>
+                  <h3>Designed to feel professional</h3>
                   <p>
-                    The motion, depth, and visual atmosphere support the message instead of overpowering it. The 3D background creates immersion while the actual website remains readable, premium, and conversion-focused.
+                    The visuals support the content instead of overwhelming it.
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div class="orb-note n1">
-              <small>Current portal button</small>
-              <strong>Linked to YouTube for now</strong>
-            </div>
-
-            <div class="orb-note n2">
-              <small>Course cards</small>
-              <strong>Click to open detailed popup</strong>
             </div>
           </div>
         </div>
@@ -1260,29 +1166,29 @@
         <div class="container">
           <div class="section-header">
             <div>
-              <h2>A program built around direction, not confusion.</h2>
+              <h2>A clearer, more serious platform.</h2>
               <p>
-                Most people do not need more random information. They need a clear structure. Hizmet Savior is meant to bring together the parts of life that usually stay separated: serious learning, real-world progress, and spiritual depth. The goal is not just content consumption. The goal is becoming more disciplined, capable, and grounded.
+                Built around structure, clarity, and meaningful development across the areas that matter most.
               </p>
             </div>
           </div>
 
           <div class="feature-grid">
             <article class="feature-card">
-              <h3>Discipline Over Hype</h3>
-              <p>Built for steady progress, consistency, and structure instead of temporary bursts of motivation.</p>
+              <h3>Clear Structure</h3>
+              <p>Focused pathways instead of scattered information.</p>
             </article>
             <article class="feature-card">
-              <h3>Practical Learning</h3>
-              <p>Programs are meant to give real application, not just theory that sounds good but changes nothing.</p>
+              <h3>Professional Design</h3>
+              <p>Premium presentation that feels intentional and credible.</p>
             </article>
             <article class="feature-card">
-              <h3>High Standards</h3>
-              <p>Clear positioning, premium presentation, and more serious educational direction than generic self-improvement pages.</p>
+              <h3>Real Utility</h3>
+              <p>Programs built around progress, not empty hype.</p>
             </article>
             <article class="feature-card">
-              <h3>One Unified Vision</h3>
-              <p>Business, academics, and deen are not treated as separate identities, but as parts of a complete person.</p>
+              <h3>Unified Vision</h3>
+              <p>Business, academics, and deen brought together properly.</p>
             </article>
           </div>
         </div>
@@ -1294,7 +1200,7 @@
             <div>
               <h2>Current Courses</h2>
               <p>
-                Browse the current Hizmet Savior course lineup. Each card opens into a focused popup window with a better breakdown of the course, what is covered, and where the purchase button will live.
+                Click any course to open a detailed course window.
               </p>
             </div>
           </div>
@@ -1302,8 +1208,8 @@
           <div class="store-shell">
             <div class="store-header">
               <div>
-                <strong style="font-size:1.08rem;">Browse Programs</strong><br>
-                <span class="muted">Three core tracks built around real growth</span>
+                <strong style="font-size:1.05rem;">Course Library</strong><br>
+                <span class="muted">Three core tracks</span>
               </div>
               <div class="search">
                 <input id="courseSearch" type="text" placeholder="Search courses" aria-label="Search courses" />
@@ -1324,9 +1230,8 @@
                   <div class="card-body">
                     <span class="badge">Business Track</span>
                     <div class="card-title">Entrepreneurial Course</div>
-                    <div class="muted">A practical path for building business thinking, systems, execution, and income-focused skills.</div>
-                    <div class="price">Flagship Growth Program</div>
-                    <div class="muted">Click to view the full course breakdown</div>
+                    <div class="muted">Business systems, execution, and growth.</div>
+                    <div class="price">Flagship Program</div>
                   </div>
                 </article>
 
@@ -1341,9 +1246,8 @@
                   <div class="card-body">
                     <span class="badge">Academic Track</span>
                     <div class="card-title">Academic Focused Course</div>
-                    <div class="muted">A structured course for focus, study systems, retention, discipline, and high-level academic performance.</div>
+                    <div class="muted">Study systems, concentration, and mastery.</div>
                     <div class="price">Performance Program</div>
-                    <div class="muted">Click to view the full course breakdown</div>
                   </div>
                 </article>
 
@@ -1358,9 +1262,8 @@
                   <div class="card-body">
                     <span class="badge">Islamic Track</span>
                     <div class="card-title">Deep Islamic Knowledge Course</div>
-                    <div class="muted">A deeper path into Islamic learning, grounding, and serious engagement with knowledge.</div>
-                    <div class="price">Depth & Foundations Program</div>
-                    <div class="muted">Click to view the full course breakdown</div>
+                    <div class="muted">Grounding, depth, and serious learning.</div>
+                    <div class="price">Foundations Program</div>
                   </div>
                 </article>
               </div>
@@ -1373,9 +1276,9 @@
         <div class="container">
           <div class="section-header">
             <div>
-              <h2>How the paths are positioned</h2>
+              <h2>Three focused tracks.</h2>
               <p>
-                Each course has its own identity, but all three fit under the same larger mission: helping a person become more capable, disciplined, and grounded. This section gives your visitors a quick understanding of how the tracks differ.
+                Distinct programs under one larger vision.
               </p>
             </div>
           </div>
@@ -1384,27 +1287,27 @@
             <article class="compare-card">
               <h3>Entrepreneurial</h3>
               <div class="compare-list">
-                <div>Focused on real-world business skill development and execution.</div>
-                <div>Built for those who want to create income, systems, and momentum.</div>
-                <div>Strong fit for people who want structure in online business growth.</div>
+                <div>Business foundations</div>
+                <div>Systems and execution</div>
+                <div>Growth-oriented skill building</div>
               </div>
             </article>
 
             <article class="compare-card">
-              <h3>Academic Focused</h3>
+              <h3>Academic</h3>
               <div class="compare-list">
-                <div>Centered around concentration, retention, studying, and performance.</div>
-                <div>Ideal for students who want real systems, not vague advice.</div>
-                <div>Pushes toward consistency and mastery rather than cramming.</div>
+                <div>Focus and retention</div>
+                <div>Study discipline</div>
+                <div>Higher performance systems</div>
               </div>
             </article>
 
             <article class="compare-card">
-              <h3>Deep Islamic Knowledge</h3>
+              <h3>Islamic Knowledge</h3>
               <div class="compare-list">
-                <div>Anchors the platform in serious Islamic learning and inner grounding.</div>
-                <div>Built for those who want more than surface-level reminders.</div>
-                <div>Connects knowledge with identity, sincerity, and long-term direction.</div>
+                <div>Serious learning</div>
+                <div>Grounding and depth</div>
+                <div>Long-term inner development</div>
               </div>
             </article>
           </div>
@@ -1417,42 +1320,44 @@
             <div>
               <h2>Contact</h2>
               <p>
-                Keep this here for inquiries, partnership interest, student support, or future launch questions.
+                Send a message for questions, support, or future enrollment inquiries.
               </p>
             </div>
           </div>
 
           <div class="contact-shell">
             <p class="contact-note">
-              This is ready as a simple front-end contact section. You can later connect it to Formspree or another form service.
+              We’ll get back to you as soon as possible.
             </p>
 
-            <form onsubmit="event.preventDefault(); alert('Form submission is not connected yet.');">
+            <form id="contactForm" action="https://formspree.io/f/mwvworzk" method="POST">
+              <input type="hidden" name="_subject" value="New Hizmet Savior Contact Request">
+
               <div class="contact-grid">
                 <div class="field">
                   <label for="firstName">First Name</label>
-                  <input id="firstName" type="text" required />
+                  <input id="firstName" name="First Name" type="text" required />
                 </div>
 
                 <div class="field">
                   <label for="lastName">Last Name</label>
-                  <input id="lastName" type="text" required />
+                  <input id="lastName" name="Last Name" type="text" required />
                 </div>
 
                 <div class="field">
                   <label for="email">Email</label>
-                  <input id="email" type="email" />
+                  <input id="email" name="Email" type="email" />
                 </div>
 
                 <div class="field">
                   <label for="phone">Phone Number</label>
-                  <input id="phone" type="tel" />
+                  <input id="phone" name="Phone Number" type="tel" />
                 </div>
 
                 <div class="field full">
                   <label for="message">Message</label>
-                  <textarea id="message" required></textarea>
-                  <div class="contact-inline-note">You can wire this up later to your preferred form endpoint.</div>
+                  <textarea id="message" name="Message" required></textarea>
+                  <div class="contact-inline-note">Please include at least an email or phone number.</div>
                 </div>
 
                 <div class="field full">
@@ -1490,7 +1395,7 @@
         <section class="details">
           <div class="badge" id="modalBadge"></div>
           <h2 id="modalTitle"></h2>
-          <div class="rating">★★★★★ <span class="muted">Program Overview</span></div>
+          <div class="rating">★★★★★ <span class="muted">Course Overview</span></div>
           <p id="modalDescription"></p>
           <ul id="modalBullets"></ul>
 
@@ -1522,7 +1427,7 @@
 
         <aside class="buybox">
           <div class="price" id="buyboxPrice">Program Access</div>
-          <p id="buyboxText">Purchase access to this program.</p>
+          <p id="buyboxText">Purchase access to this course.</p>
           <div class="stack">
             <a class="btn-buy" id="buyNowLink" href="https://amazon.com" target="_blank" rel="noopener noreferrer">Buy Now</a>
             <a class="btn-info" href="https://youtube.com" target="_blank" rel="noopener noreferrer">Student Portal</a>
@@ -1540,70 +1445,67 @@
         badge: 'Business Track',
         title: 'Entrepreneurial Course',
         visualClass: 'entrepreneur',
-        description: 'This course is built for people who want to become more capable in business, execution, and real-world value creation. Rather than vague motivation, it is positioned as a practical system for building entrepreneurial thinking, understanding digital opportunity, and taking meaningful action.',
+        description: 'A focused course for business thinking, execution, and practical growth.',
         bullets: [
-          'Structured introduction to entrepreneurial thinking',
-          'Focus on systems, execution, and skill building',
-          'Designed to move people out of confusion and into action',
-          'Built around momentum, clarity, and practical growth',
-          'Strong positioning for those who want more than surface-level business content'
+          'Business foundations',
+          'Execution systems',
+          'Clearer entrepreneurial direction',
+          'Practical growth mindset'
         ],
-        display: ['Business foundations', 'Execution', 'Opportunity recognition', 'Systems thinking'],
-        os: ['Online business concepts', 'Action planning', 'Value creation', 'Growth mindset'],
-        storage: ['Course modules', 'Video lessons', 'Guided pathway', 'Future resources'],
-        support: ['Aspiring entrepreneurs', 'People seeking income direction', 'Builders and self-starters'],
-        input: ['Greater clarity', 'Better execution', 'Real entrepreneurial momentum'],
+        display: ['Business', 'Execution', 'Systems'],
+        os: ['Foundations', 'Growth', 'Action'],
+        storage: ['Modules', 'Video lessons', 'Guided pathway'],
+        support: ['Aspiring entrepreneurs', 'Builders', 'Self-starters'],
+        input: ['Clarity', 'Execution', 'Momentum'],
         price: 'Program Access',
-        note: 'The Buy Now button currently points to Amazon as a placeholder and can be swapped later.'
+        note: 'The Buy Now button currently points to Amazon as a placeholder.'
       },
 
       academic: {
         badge: 'Academic Track',
         title: 'Academic Focused Course',
         visualClass: 'academic',
-        description: 'This course is centered on serious academic improvement. It is designed for students and learners who need better systems for concentration, study structure, retention, and performance. The emphasis is on becoming disciplined and strategic rather than just working harder in random ways.',
+        description: 'A course centered on concentration, study structure, and stronger academic performance.',
         bullets: [
-          'Built around focus, discipline, and effective studying',
-          'Helps replace scattered effort with structured learning systems',
-          'Suitable for students who want stronger academic performance',
-          'Designed to support retention, consistency, and mastery',
-          'More serious and organized than generic study advice content'
+          'Focus and retention',
+          'Study systems',
+          'Better structure',
+          'Higher academic consistency'
         ],
-        display: ['Focus', 'Retention', 'Study systems', 'Consistency'],
-        os: ['Productive study methods', 'Academic discipline', 'Revision structure', 'Learning strategy'],
-        storage: ['Guided lessons', 'Frameworks', 'Practical tools', 'Repeatable systems'],
-        support: ['Students', 'Independent learners', 'Anyone seeking better academic structure'],
-        input: ['Higher performance', 'Better concentration', 'More efficient studying'],
+        display: ['Focus', 'Retention', 'Study systems'],
+        os: ['Discipline', 'Performance', 'Learning strategy'],
+        storage: ['Lessons', 'Frameworks', 'Repeatable tools'],
+        support: ['Students', 'Learners', 'Independent study'],
+        input: ['Performance', 'Concentration', 'Efficiency'],
         price: 'Program Access',
-        note: 'The Buy Now button currently points to Amazon as a placeholder and can be swapped later.'
+        note: 'The Buy Now button currently points to Amazon as a placeholder.'
       },
 
       islamic: {
         badge: 'Islamic Track',
         title: 'Deep Islamic Knowledge Course',
         visualClass: 'islamic',
-        description: 'This course is positioned as a more serious path into Islamic knowledge and grounding. It is meant for those who do not want shallow inspirational fragments, but a stronger connection to meaningful learning, deeper understanding, and a more rooted inner life.',
+        description: 'A more serious path into Islamic learning, grounding, and deeper engagement with knowledge.',
         bullets: [
-          'Built for people seeking depth rather than surface-level reminders',
-          'Positioned around meaningful Islamic learning and grounding',
-          'Supports a stronger intellectual and spiritual foundation',
-          'Fits naturally into the broader Hizmet Savior mission',
-          'Can become a powerful distinguishing pillar of the entire platform'
+          'Meaningful Islamic learning',
+          'Grounding and depth',
+          'Stronger foundations',
+          'Long-term seriousness'
         ],
-        display: ['Islamic learning', 'Grounding', 'Depth', 'Serious engagement'],
-        os: ['Knowledge path', 'Foundational understanding', 'Reflection', 'Identity and sincerity'],
-        storage: ['Course lessons', 'Structured themes', 'Guided progression', 'Future expansion'],
-        support: ['Students of knowledge', 'Muslims seeking depth', 'People wanting stronger grounding'],
-        input: ['Deeper understanding', 'More rooted identity', 'Stronger spiritual seriousness'],
+        display: ['Islamic learning', 'Grounding', 'Depth'],
+        os: ['Foundations', 'Reflection', 'Understanding'],
+        storage: ['Structured lessons', 'Themes', 'Guided progression'],
+        support: ['Students of knowledge', 'Muslims seeking depth', 'Serious learners'],
+        input: ['Understanding', 'Grounding', 'Stronger identity'],
         price: 'Program Access',
-        note: 'The Buy Now button currently points to Amazon as a placeholder and can be swapped later.'
+        note: 'The Buy Now button currently points to Amazon as a placeholder.'
       }
     };
 
     const previewSteps = {
-      entrepreneurial: ['Overview', 'Framework', 'Execution'],
-      academic: ['Overview', 'Methods', 'Mastery'],
-      islamic: ['Overview', 'Foundations', 'Depth']
+      entrepreneurial: ['Overview', 'Structure', 'Access'],
+      academic: ['Overview', 'Methods', 'Access'],
+      islamic: ['Overview', 'Foundations', 'Access']
     };
 
     function renderChips(id, values) {
@@ -1613,22 +1515,21 @@
     function renderThumbs(key) {
       const labels = previewSteps[key] || ['Overview', 'Details', 'Access'];
       document.getElementById('thumbs').innerHTML = labels.map((label, index) => `
-        <div class="thumb ${index === 0 ? 'active' : ''}" onclick="setPreviewStep(${index}, '${key}')">
+        <div class="thumb ${index === 0 ? 'active' : ''}" onclick="setPreviewStep(${index})">
           <div class="thumb-label">${label}</div>
         </div>
       `).join('');
     }
 
-    function setPreviewStep(index, key) {
+    function setPreviewStep(index) {
       const thumbs = document.querySelectorAll('#thumbs .thumb');
       thumbs.forEach((thumb, i) => thumb.classList.toggle('active', i === index));
 
       const modalVisual = document.getElementById('modalVisual');
-      modalVisual.style.transform = index === 0
-        ? 'scale(1)'
-        : index === 1
-          ? 'scale(1.01) rotate(-1deg)'
-          : 'scale(1.01) rotate(1deg)';
+      modalVisual.style.transform =
+        index === 0 ? 'scale(1)' :
+        index === 1 ? 'scale(1.01) rotate(-1deg)' :
+        'scale(1.01) rotate(1deg)';
     }
 
     function openProduct(key) {
@@ -1659,7 +1560,7 @@
       `;
 
       renderThumbs(key);
-      setPreviewStep(0, key);
+      setPreviewStep(0);
 
       document.getElementById('modal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -1691,7 +1592,16 @@
       if (e.key === 'Escape') forceClose();
     });
 
-    // 3D BACKGROUND — SUPPORTIVE, NOT DISTRACTING
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      if (!email && !phone) {
+        e.preventDefault();
+        alert('Please provide at least an email or a phone number.');
+      }
+    });
+
+    // Subtle 3D background
     const canvas = document.getElementById('bg3d');
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -1704,7 +1614,7 @@
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
-      48,
+      46,
       window.innerWidth / window.innerHeight,
       0.1,
       100
@@ -1714,62 +1624,62 @@
     const group = new THREE.Group();
     scene.add(group);
 
-    const ambient = new THREE.AmbientLight(0xffffff, 0.9);
+    const ambient = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambient);
 
-    const point1 = new THREE.PointLight(0x7cc4ff, 1.4, 40);
+    const point1 = new THREE.PointLight(0xb5e0ad, 1.2, 40);
     point1.position.set(5, 4, 8);
     scene.add(point1);
 
-    const point2 = new THREE.PointLight(0x7ef0cf, 1.2, 40);
+    const point2 = new THREE.PointLight(0xd8efcf, 1.1, 40);
     point2.position.set(-6, -3, 7);
     scene.add(point2);
 
-    const point3 = new THREE.PointLight(0x8b7cff, 1.1, 40);
-    point3.position.set(0, 6, 9);
-    scene.add(point3);
+    const orbGeometry = new THREE.IcosahedronGeometry(0.82, 1);
 
-    const orbGeometry = new THREE.IcosahedronGeometry(0.78, 1);
-    const orbMaterial1 = new THREE.MeshPhongMaterial({
-      color: 0x7cc4ff,
-      transparent: true,
-      opacity: 0.2,
-      shininess: 90,
-      wireframe: false
-    });
-    const orbMaterial2 = new THREE.MeshPhongMaterial({
-      color: 0x7ef0cf,
-      transparent: true,
-      opacity: 0.16,
-      shininess: 90,
-      wireframe: false
-    });
-    const orbMaterial3 = new THREE.MeshPhongMaterial({
-      color: 0x8b7cff,
-      transparent: true,
-      opacity: 0.14,
-      shininess: 100,
-      wireframe: false
-    });
-
-    const orb1 = new THREE.Mesh(orbGeometry, orbMaterial1);
+    const orb1 = new THREE.Mesh(
+      orbGeometry,
+      new THREE.MeshPhongMaterial({
+        color: 0xb5e0ad,
+        transparent: true,
+        opacity: 0.16,
+        shininess: 70
+      })
+    );
     orb1.position.set(-4.8, 1.8, -1.5);
 
-    const orb2 = new THREE.Mesh(new THREE.IcosahedronGeometry(1.12, 1), orbMaterial2);
-    orb2.position.set(4.8, -1.6, -2.2);
+    const orb2 = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(1.08, 1),
+      new THREE.MeshPhongMaterial({
+        color: 0xd8efcf,
+        transparent: true,
+        opacity: 0.16,
+        shininess: 70
+      })
+    );
+    orb2.position.set(4.6, -1.6, -2.2);
 
-    const orb3 = new THREE.Mesh(new THREE.IcosahedronGeometry(0.92, 1), orbMaterial3);
+    const orb3 = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(0.9, 1),
+      new THREE.MeshPhongMaterial({
+        color: 0x9ccc95,
+        transparent: true,
+        opacity: 0.14,
+        shininess: 70
+      })
+    );
     orb3.position.set(0.4, 3.2, -3.2);
 
     group.add(orb1, orb2, orb3);
 
-    const ringGeometry = new THREE.TorusGeometry(1.8, 0.03, 16, 100);
-    const ringMaterial = new THREE.MeshBasicMaterial({
-      color: 0x7cc4ff,
-      transparent: true,
-      opacity: 0.12
-    });
-    const ring1 = new THREE.Mesh(ringGeometry, ringMaterial);
+    const ring1 = new THREE.Mesh(
+      new THREE.TorusGeometry(1.8, 0.03, 16, 100),
+      new THREE.MeshBasicMaterial({
+        color: 0xb5e0ad,
+        transparent: true,
+        opacity: 0.08
+      })
+    );
     ring1.position.set(-3.6, -2.4, -4);
     ring1.rotation.x = 1.1;
     group.add(ring1);
@@ -1777,9 +1687,9 @@
     const ring2 = new THREE.Mesh(
       new THREE.TorusGeometry(2.1, 0.035, 16, 100),
       new THREE.MeshBasicMaterial({
-        color: 0x7ef0cf,
+        color: 0x9ccc95,
         transparent: true,
-        opacity: 0.09
+        opacity: 0.07
       })
     );
     ring2.position.set(3.9, 2.1, -4.5);
@@ -1788,7 +1698,7 @@
     group.add(ring2);
 
     const particlesGeometry = new THREE.BufferGeometry();
-    const particleCount = 900;
+    const particleCount = 700;
     const posArray = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
@@ -1799,14 +1709,15 @@
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-    const particlesMaterial = new THREE.PointsMaterial({
-      color: 0xd8ecff,
-      size: 0.025,
-      transparent: true,
-      opacity: 0.5
-    });
-
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    const particles = new THREE.Points(
+      particlesGeometry,
+      new THREE.PointsMaterial({
+        color: 0x8fb28a,
+        size: 0.025,
+        transparent: true,
+        opacity: 0.22
+      })
+    );
     scene.add(particles);
 
     let mouseX = 0;
@@ -1835,31 +1746,28 @@
 
       const t = clock.getElapsedTime();
 
-      orb1.rotation.x += 0.002;
-      orb1.rotation.y += 0.004;
-      orb2.rotation.x -= 0.0025;
-      orb2.rotation.y += 0.003;
-      orb3.rotation.y -= 0.0035;
-      orb3.rotation.z += 0.002;
+      orb1.rotation.x += 0.0016;
+      orb1.rotation.y += 0.0024;
+      orb2.rotation.x -= 0.0015;
+      orb2.rotation.y += 0.002;
+      orb3.rotation.y -= 0.0022;
 
-      orb1.position.y = 1.8 + Math.sin(t * 0.9) * 0.18;
-      orb2.position.y = -1.6 + Math.sin(t * 0.7 + 1.2) * 0.22;
-      orb3.position.y = 3.2 + Math.sin(t * 0.8 + 2.1) * 0.16;
+      orb1.position.y = 1.8 + Math.sin(t * 0.8) * 0.14;
+      orb2.position.y = -1.6 + Math.sin(t * 0.6 + 1.2) * 0.18;
+      orb3.position.y = 3.2 + Math.sin(t * 0.7 + 2.1) * 0.12;
 
-      ring1.rotation.z += 0.002;
-      ring2.rotation.z -= 0.0016;
+      ring1.rotation.z += 0.0012;
+      ring2.rotation.z -= 0.001;
 
-      particles.rotation.y = t * 0.01;
-      particles.position.y = -scrollTarget * 0.18;
+      particles.rotation.y = t * 0.006;
+      particles.position.y = -scrollTarget * 0.15;
 
-      group.rotation.y += (mouseX * 0.08 - group.rotation.y) * 0.03;
-      group.rotation.x += ((-mouseY) * 0.06 - group.rotation.x) * 0.03;
+      group.rotation.y += (mouseX * 0.05 - group.rotation.y) * 0.02;
+      group.rotation.x += ((-mouseY) * 0.04 - group.rotation.x) * 0.02;
 
-      camera.position.x += (mouseX * 0.35 - camera.position.x) * 0.03;
-      camera.position.y += ((-mouseY * 0.24) - camera.position.y) * 0.03;
-      camera.position.z = 10;
-
-      group.position.y += ((-scrollTarget * 0.42) - group.position.y) * 0.03;
+      camera.position.x += (mouseX * 0.22 - camera.position.x) * 0.02;
+      camera.position.y += ((-mouseY * 0.16) - camera.position.y) * 0.02;
+      group.position.y += ((-scrollTarget * 0.3) - group.position.y) * 0.02;
 
       renderer.render(scene, camera);
     }
