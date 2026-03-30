@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hizmet Savior | Professional Development</title>
-    <meta name="description" content="Elite programs for entrepreneurship, academics, and deep Islamic knowledge." />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -19,13 +18,13 @@
             --accent-light: #b5e0ad;
             --text-main: #1a1c1a;
             --text-muted: #5c625c;
-            --border: rgba(0, 0, 0, 0.06);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
-            --shadow-md: 0 20px 40px rgba(0,0,0,0.04);
+            --border: rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 20px 40px rgba(0,0,0,0.06);
             --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; }
         body { 
             margin: 0; 
             font-family: 'Inter', sans-serif; 
@@ -34,41 +33,40 @@
             line-height: 1.6;
         }
 
-        /* --- 3D Background Layer --- */
-        #bg3d { position: fixed; inset: 0; z-index: -1; opacity: 0.6; pointer-events: none; }
+        #bg3d { position: fixed; inset: 0; z-index: -1; opacity: 0.5; pointer-events: none; }
 
-        /* --- Typography --- */
-        h1, h2, .serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
-        h1 { font-size: clamp(3.5rem, 8vw, 6rem); line-height: 0.9; letter-spacing: -0.02em; }
-        h2 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+        /* Typography */
+        h1, h2, h3, .serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
+        h1 { font-size: clamp(3.5rem, 8vw, 6rem); line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 20px; }
+        h2 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 10px; }
 
         .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
 
-        /* --- Navigation --- */
+        /* Navigation */
         .nav {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(255, 255, 255, 0.8);
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 20px 0;
+            padding: 18px 0;
         }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-weight: 600; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
-        .brand-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: var(--text-muted); font-size: 0.9rem; transition: var(--transition); }
+        .brand { font-weight: 700; font-size: 1.3rem; display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+        .brand-dot { width: 12px; height: 12px; background: var(--accent); border-radius: 3px; transform: rotate(45deg); }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { color: var(--text-muted); font-size: 0.95rem; text-decoration: none; transition: var(--transition); font-weight: 500; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* --- Hero --- */
-        .hero { padding: 120px 0 80px; text-align: center; }
+        /* Hero */
+        .hero { padding: 100px 0 80px; text-align: center; }
         .eyebrow { 
             text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; 
-            font-weight: 600; color: var(--accent); margin-bottom: 24px; display: block;
+            font-weight: 700; color: var(--accent); margin-bottom: 24px; display: block;
         }
-        .hero p { max-width: 600px; margin: 32px auto; font-size: 1.15rem; color: var(--text-muted); }
+        .hero p { max-width: 650px; margin: 32px auto; font-size: 1.2rem; color: var(--text-muted); }
 
-        /* --- Product Grid --- */
-        .product-section { padding: 100px 0; background: var(--soft-green); border-radius: 60px 60px 0 0; }
+        /* Courses Section */
+        .courses-section { padding: 100px 0; background: var(--soft-green); border-radius: 60px 60px 0 0; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
         
         .card {
@@ -76,32 +74,68 @@
             padding: 40px;
             border-radius: 32px;
             transition: var(--transition);
-            border: 1px solid transparent;
+            border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 450px;
+            min-height: 420px;
+            cursor: pointer;
         }
         .card:hover { transform: translateY(-10px); border-color: var(--accent-light); box-shadow: var(--shadow-md); }
-        .card-tag { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--accent); opacity: 0.6; }
-        .card h3 { font-size: 2rem; margin: 15px 0; }
+        .card-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.1em; }
+        .card h3 { font-size: 2.2rem; margin: 15px 0; line-height: 1; }
+        .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
         
-        /* --- Buttons --- */
+        /* Buttons */
         .btn {
             display: inline-flex; align-items: center; justify-content: center;
-            padding: 18px 36px; border-radius: 100px; font-weight: 600;
+            padding: 16px 32px; border-radius: 100px; font-weight: 600;
             cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+            text-decoration: none;
         }
         .btn-primary { background: var(--base); color: white; }
-        .btn-primary:hover { transform: scale(1.05); background: var(--accent); }
+        .btn-primary:hover { transform: scale(1.03); background: var(--accent); }
         .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-outline:hover { background: var(--base); color: white; }
 
-        /* --- Responsive --- */
+        /* Contact Form (Formspree) */
+        .contact-section { padding: 100px 0; background: white; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; color: var(--text-muted); text-transform: uppercase; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 16px; border-radius: 12px; border: 1px solid var(--border);
+            background: #f9f9f9; font-family: inherit; font-size: 1rem; outline: none; transition: var(--transition);
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); background: white; }
+
+        /* Modal / Mini Window */
+        .modal {
+            position: fixed; inset: 0; z-index: 9999;
+            display: none; align-items: center; justify-content: center;
+            background: rgba(10, 12, 10, 0.4); backdrop-filter: blur(15px);
+            padding: 20px;
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: white; width: min(900px, 100%); max-height: 90vh;
+            border-radius: 40px; overflow-y: auto; position: relative;
+            padding: 60px; box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+        }
+        .modal-close {
+            position: absolute; top: 30px; right: 30px;
+            width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border);
+            background: white; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: #f5f5f5; }
+        .modal-body h2 { font-size: 3.5rem; margin-top: 0; }
+        .modal-buy-section { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+
         @media (max-width: 900px) {
-            .grid { grid-template-columns: 1fr; }
+            .grid, .contact-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .container { padding: 0 24px; }
+            .modal-content { padding: 40px 24px; }
         }
     </style>
 </head>
@@ -113,11 +147,11 @@
         <div class="container nav-inner">
             <a href="#" class="brand"><div class="brand-dot"></div> Hizmet Savior</a>
             <nav class="nav-links">
-                <a href="#about">Philosophy</a>
-                <a href="#courses">Curriculum</a>
+                <a href="#philosophy">Philosophy</a>
+                <a href="#courses">Courses</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a href="#courses" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Portal</a>
+            <a href="https://amazon.com" target="_blank" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.85rem;">Student Portal</a>
         </div>
     </header>
 
@@ -125,60 +159,165 @@
         <section class="hero container">
             <span class="eyebrow">Intellect • Spirit • Enterprise</span>
             <h1>High-Performance <br>Development for the <span class="serif">Serious Soul.</span></h1>
-            <p>We provide the architectural framework for personal growth through structured tracks in business, academia, and spiritual depth.</p>
+            <p>Providing the structural framework for significant growth across business, academia, and classical Islamic depth.</p>
             <div style="display: flex; gap: 15px; justify-content: center;">
-                <button class="btn btn-primary">View Curriculum</button>
-                <button class="btn btn-outline">Our Philosophy</button>
+                <a href="#courses" class="btn btn-primary">View Courses</a>
+                <a href="#philosophy" class="btn btn-outline">Our Philosophy</a>
             </div>
         </section>
 
-        <section class="product-section" id="courses">
+        <section id="philosophy" style="padding: 100px 0; text-align: center;">
+            <div class="container">
+                <h2 class="serif" style="font-size: 3.5rem;">Philosophy of Excellence</h2>
+                <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.1rem;">
+                    We believe that professional success and spiritual depth are not mutually exclusive. Our curriculum is designed to merge clinical business execution with the rigorous study of traditional knowledge.
+                </p>
+            </div>
+        </section>
+
+        <section class="courses-section" id="courses">
             <div class="container">
                 <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
-                    <h2>The Core <span class="serif">Tracks</span></h2>
-                    <p style="max-width: 400px; margin: 0;">Each program is designed to move students from theoretical understanding to clinical execution.</p>
+                    <h2>Current <span class="serif">Courses</span></h2>
+                    <p style="max-width: 450px; margin: 0; color: var(--text-muted);">Each program moves from theory to execution. Click a track to view the curriculum details.</p>
                 </div>
 
                 <div class="grid">
-                    <article class="card">
+                    <article class="card" onclick="openCourse('entrepreneurial')">
                         <div>
                             <span class="card-tag">Track 01</span>
                             <h3>Entrepreneurial <br>Systems</h3>
-                            <p>Mastering the mechanics of value creation, market execution, and scalable growth systems.</p>
+                            <p>Master the mechanics of value creation and market execution.</p>
                         </div>
-                        <button class="btn btn-outline" onclick="alert('Accessing Track 01...')">Explore Program</button>
+                        <span class="btn btn-outline">Explore Program</span>
                     </article>
 
-                    <article class="card">
+                    <article class="card" onclick="openCourse('academic')">
                         <div>
                             <span class="card-tag">Track 02</span>
                             <h3>Academic <br>Excellence</h3>
-                            <p>Optimizing cognitive performance, study architecture, and long-term knowledge retention.</p>
+                            <p>Optimizing cognitive performance and long-term knowledge retention.</p>
                         </div>
-                        <button class="btn btn-outline" onclick="alert('Accessing Track 02...')">Explore Program</button>
+                        <span class="btn btn-outline">Explore Program</span>
                     </article>
 
-                    <article class="card">
+                    <article class="card" onclick="openCourse('islamic')">
                         <div>
                             <span class="card-tag">Track 03</span>
                             <h3>Islamic <br>Epistemology</h3>
-                            <p>A rigorous path into classical deen, grounding the soul in depth and serious tradition.</p>
+                            <p>A rigorous path into classical deen and traditional grounding.</p>
                         </div>
-                        <button class="btn btn-outline" onclick="alert('Accessing Track 03...')">Explore Program</button>
+                        <span class="btn btn-outline">Explore Program</span>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div>
+                        <h2 class="serif">Get in Touch</h2>
+                        <p style="color: var(--text-muted);">Have questions about enrollment or the tracks? Send us a message and our team will get back to you within 24 hours.</p>
+                    </div>
+                    <form action="https://formspree.io/f/mwvworzk" method="POST">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="_replyto" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 80px 0; text-align: center; border-top: 1px solid var(--border);">
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body" id="modalBody">
+                </div>
+        </div>
+    </div>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border); background: #fafafa;">
         <div class="container">
-            <p style="opacity: 0.5; font-size: 0.8rem;">© 2026 HIZMET SAVIOR. ALL RIGHTS RESERVED.</p>
+            <p style="opacity: 0.5; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;">© 2026 HIZMET SAVIOR. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
     <script>
+        // --- COURSE DATA ---
+        const courses = {
+            entrepreneurial: {
+                title: "Entrepreneurial Systems",
+                tag: "Track 01",
+                description: "This flagship program focuses on the technical and psychological aspects of building a business. You will learn the architecture of value creation and how to build scalable growth systems.",
+                details: ["Business Foundations", "Execution Systems", "Market Mapping", "Scalable Sales Frameworks"]
+            },
+            academic: {
+                title: "Academic Excellence",
+                tag: "Track 02",
+                description: "Designed for students and lifelong learners, this track provides a cognitive framework for high-level studying, deep focus, and long-term memory retention architecture.",
+                details: ["Cognitive Load Management", "Study Architecture", "Deep Work Protocols", "Advanced Retention Techniques"]
+            },
+            islamic: {
+                title: "Islamic Epistemology",
+                tag: "Track 03",
+                description: "A rigorous deep-dive into classical Islamic sciences. This course is for those seeking a serious, grounded path into the deen through traditional frameworks.",
+                details: ["Classical Grounding", "Epistemological Depth", "Traditional Study Frameworks", "Inner Development"]
+            }
+        };
+
+        // --- MODAL LOGIC ---
+        function openCourse(id) {
+            const course = courses[id];
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <span class="card-tag">${course.tag}</span>
+                <h2 class="serif">${course.title}</h2>
+                <p style="font-size: 1.2rem; color: #5c625c; margin: 25px 0;">${course.description}</p>
+                <div style="margin: 30px 0;">
+                    <h4 style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;">What's Included:</h4>
+                    <ul style="padding-left: 20px; columns: 2;">
+                        ${course.details.map(d => `<li style="margin-bottom: 10px; font-weight: 500;">${d}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-buy-section">
+                    <div>
+                        <span style="display: block; font-size: 0.8rem; color: #999; font-weight: 700;">ENROLLMENT</span>
+                        <strong style="font-size: 1.4rem;">Program Access</strong>
+                    </div>
+                    <a href="https://amazon.com" target="_blank" class="btn btn-primary">Buy Course</a>
+                </div>
+            `;
+            
+            document.getElementById('courseModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeModal() {
+            document.getElementById('courseModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('courseModal');
+            if (event.target == modal) closeModal();
+        }
+
+        // --- 3D AMBIANCE ---
         const canvas = document.getElementById('bg3d');
         const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -186,9 +325,8 @@
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         camera.position.z = 5;
 
-        // Create elegant floating orbs
-        const geometry = new THREE.IcosahedronGeometry(1.5, 1);
-        const material = new THREE.MeshPhongMaterial({ color: 0xb5e0ad, wireframe: true, transparent: true, opacity: 0.1 });
+        const geometry = new THREE.IcosahedronGeometry(2, 0);
+        const material = new THREE.MeshPhongMaterial({ color: 0xb5e0ad, wireframe: true, transparent: true, opacity: 0.15 });
         const sphere = new THREE.Mesh(geometry, material);
         scene.add(sphere);
 
@@ -199,8 +337,8 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            sphere.rotation.y += 0.002;
-            sphere.rotation.x += 0.001;
+            sphere.rotation.y += 0.001;
+            sphere.rotation.x += 0.0005;
             renderer.render(scene, camera);
         }
         animate();
